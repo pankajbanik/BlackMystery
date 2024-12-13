@@ -3,43 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fantasy Door with Unique Navbar</title>
+  <title>Fantasy Door - Mobile Friendly</title>
   <style>
     /* General Body Styling */
     body {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background: url("Gothic Horror Canvas Print of a Castle - Purple.jpeg") no-repeat center center fixed;
+      background: url("HOLOGRAM EFFECT.jpeg") no-repeat center center fixed;
       font-family: 'Poppins', sans-serif;
       height: 100vh;
+      background-size: cover;
     }
 
     /* Navbar Styling */
     nav {
       position: fixed;
-      top: 0;
+      top: 4%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       width: 100%;
       height: 70px;
-      background: linear-gradient(to right, #1f4037, #99f2c8);
+      background: linear-gradient(to right, #db52b9, #f88c07);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 50px;
+      padding: 0 20px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       z-index: 1000;
     }
 
     nav .logo {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      letter-spacing: 2px;
       text-transform: uppercase;
       color: #fff;
       background: linear-gradient(to right, #fff, #00c6ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glow 2s infinite alternate;
     }
 
     nav ul {
@@ -50,57 +51,36 @@
     }
 
     nav ul li {
-      margin: 0 20px;
-      position: relative;
+      margin: 0 10px;
     }
 
     nav ul li a {
       color: #fff;
       text-decoration: none;
       font-size: 1rem;
-      font-weight: 500;
       padding: 10px 15px;
       border-radius: 25px;
-      background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      background: rgba(255, 255, 255, 0.1);
       transition: all 0.3s ease;
     }
 
     nav ul li a:hover {
-      background: linear-gradient(to right, #00c6ff, #0072ff);
+      background: #00c6ff;
       color: #fff;
-      box-shadow: 0 4px 15px rgba(0, 198, 255, 0.4);
     }
 
-    nav ul li::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 3px;
-      background: linear-gradient(to right, #ff00cc, #3333ff);
-      transition: 0.4s;
-      transform: translateX(-50%);
-    }
-
-    nav ul li:hover::after {
-      width: 80%;
-    }
-
-    @keyframes glow {
-      from {
-        text-shadow: 0 0 5px #fff, 0 0 10px #00c6ff, 0 0 20px #0072ff;
-      }
-      to {
-        text-shadow: 0 0 10px #fff, 0 0 20px #00c6ff, 0 0 40px #0072ff;
-      }
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 2rem;
+      color: white;
     }
 
     /* Gate Container */
     .gate-container {
       position: relative;
-      width: 800px;
-      height: 600px;
+      width: 80%;
+      height: 50%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -110,8 +90,7 @@
 
     /* Gate Doors */
     .gate {
-      position: absolute;
-      width: 50%;
+      width: 48%;
       height: 100%;
       background: url("download (34).jpeg") no-repeat center center;
       background-size: cover;
@@ -121,16 +100,13 @@
     }
 
     .left-gate {
-      left: 0;
       transform-origin: left center;
     }
 
     .right-gate {
-      right: 0;
       transform-origin: right center;
     }
 
-    /* Open State */
     .open .left-gate {
       transform: rotateY(-110deg);
     }
@@ -139,12 +115,8 @@
       transform: rotateY(110deg);
     }
 
-    /* Mobile Navbar */
+    /* Mobile View */
     @media (max-width: 768px) {
-      nav {
-        padding: 0 20px;
-      }
-
       nav ul {
         display: none;
         flex-direction: column;
@@ -153,7 +125,7 @@
         left: 0;
         width: 100%;
         background: rgba(0, 0, 0, 0.9);
-        transition: top 0.3s ease;
+        transition: all 0.3s ease;
       }
 
       nav ul.active {
@@ -161,26 +133,26 @@
       }
 
       nav ul li {
-        margin: 15px 0;
+        margin: 10px 0;
         text-align: center;
       }
 
       .menu-toggle {
         display: block;
-        cursor: pointer;
-        color: #fff;
-        font-size: 2rem;
-        z-index: 2000;
       }
 
       .gate-container {
-        width: 90%;
+        width: 100%;
         height: 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       .gate {
-        width: 48%;
-        height: 100%;
+        width: 90%;
+        height: 40%;
+        margin: 10px 0;
       }
     }
   </style>
@@ -188,7 +160,7 @@
 <body>
   <!-- Navbar -->
   <nav>
-    <div class="logo">BrandName</div>
+    <div class="logo">Pankaj Banik</div>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <ul>
       <li><a href="#">Home</a></li>
